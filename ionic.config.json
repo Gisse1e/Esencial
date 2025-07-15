@@ -1,0 +1,7 @@
+{
+  "name": "Esencial",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
