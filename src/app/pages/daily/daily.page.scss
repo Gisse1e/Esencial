@@ -1,0 +1,59 @@
+ion-content {
+  --overflow: hidden;
+  overflow: hidden !important;
+  touch-action: none;
+  padding: 0 !important;
+}
+
+.daily-menu {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+}
+
+.daily-title {
+  font-family: 'Amatic SC', cursive;
+  font-size: 4.5rem;
+  color: #53a31a;
+  margin-bottom: 24px;
+  font-weight: 700;
+}
+
+.daily-img-block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.daily-img {
+  width: 85w;
+  height: 85vw;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 8px 48px 0 rgba(0, 0, 0, 0.18);
+}
+
+.daily-price {
+  font-family: 'Manrope', sans-serif;
+  font-size: 1.8rem;
+  color: #37750C;
+  font-weight: 700;
+  font-style: italic;
+  margin-bottom: 24px;
+}
+
+.daily-btn {
+  --background: #62CD14D4;
+  --color: #fff;
+  font-family: 'Amatic SC', cursive;
+  font-size: 1.9rem;
+  font-weight: 700;
+  border-radius: 12px;
+  margin-top: 8px;
+  width: auto;
+  max-width: 320px;
+}

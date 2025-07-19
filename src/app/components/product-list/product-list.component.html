@@ -1,0 +1,31 @@
+<ion-list>
+  <ion-item *ngFor="let product of products; let i = index">
+    <ion-thumbnail [slot]="i % 2 === 0 ? 'end' : 'start'">
+      <ion-img [src]="product.image" [alt]="product.name"></ion-img>
+    </ion-thumbnail>
+    <ion-label [ngClass]="i % 2 === 0 ? 'align-right' : 'align-left'">
+      <h2 class="product-name">{{ product.name }}</h2>
+      <p class="preferencia">
+        <ng-container *ngIf="i % 2 === 0">
+          {{ product.gluten }}
+          <iconify-icon icon="healthicons:gluten-free-outline" class="icon-gluten" width="22" height="22"></iconify-icon>
+        </ng-container>
+        <ng-container *ngIf="i % 2 !== 0">
+          <iconify-icon icon="healthicons:gluten-free-outline" class="icon-gluten" width="22" height="22"></iconify-icon>
+          {{ product.gluten }}
+        </ng-container>
+      </p>
+      <p class="preferencia">
+        <ng-container *ngIf="i % 2 === 0">
+          {{ product.vegan }}
+          <iconify-icon icon="iconoir:vegan" class="icon-vegan" width="22" height="22"></iconify-icon>
+        </ng-container>
+        <ng-container *ngIf="i % 2 !== 0">
+          <iconify-icon icon="iconoir:vegan" class="icon-vegan" width="22" height="22"></iconify-icon>
+          {{ product.vegan }}
+        </ng-container>
+      </p>
+      <p class="dish-price">${{ product.price | number:'1.0-0':'es-CL' }}</p>
+    </ion-label>
+  </ion-item>
+</ion-list>

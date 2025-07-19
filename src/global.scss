@@ -1,3 +1,5 @@
+@use 'src/theme/variables' as *;
+
 /*
  * App Global CSS
  * ----------------------------------------------------------------------------
@@ -8,6 +10,9 @@
  * For more information on global stylesheets, visit the documentation:
  * https://ionicframework.com/docs/layout/global-stylesheets
  */
+
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Manrope:wght@200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
 
 /* Core CSS required for Ionic components to work properly */
 @import "@ionic/angular/css/core.css";
@@ -35,3 +40,45 @@
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import "@ionic/angular/css/palettes/dark.system.css";
+
+body, ion-app, ion-content {
+  background: $color-fondo-general !important;
+}
+
+ion-content {
+  --background: $color-fondo-general !important;
+  background: $color-fondo-general !important;
+}
+
+ion-header, ion-toolbar, ion-tab-bar {
+  box-shadow: none !important;
+  --box-shadow: none !important;
+  border: none !important;
+  border-bottom: none !important;
+  border-top: none !important;
+}
+
+/* Ocultar el router outlet extra vacío que está causando el overlay */
+ion-tabs > ion-router-outlet:not([tabs="true"]) {
+  display: none !important;
+  pointer-events: none !important;
+  position: absolute !important;
+  z-index: -1 !important;
+}
+
+/* Solución alternativa más específica */
+ion-router-outlet:empty {
+  display: none !important;
+  pointer-events: none !important;
+}
+
+/* Asegurar que solo el router outlet principal y el de tabs sean visibles */
+ion-router-outlet:not(:first-of-type):not([tabs="true"]) {
+  display: none !important;
+  pointer-events: none !important;
+}
+
+ion-modal.modal-sheet-custom::part(content) {
+  background: transparent !important;
+}
+

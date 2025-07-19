@@ -1,0 +1,31 @@
+<ion-header>
+    <ion-tab-bar slot="top">
+      <ion-tab-button tab="daily" [routerLink]="['/tabs/daily']" [ngClass]="{'custom-tab-active': activeTopTab === 'daily'}" (click)="setActiveTopTab('daily')">
+        <iconify-icon icon="hugeicons:spoon-and-knife"></iconify-icon>
+      </ion-tab-button>
+      <ion-tab-button tab="mdishes" [routerLink]="['/tabs/mdishes']" [ngClass]="{'custom-tab-active': activeTopTab === 'mdishes'}" (click)="setActiveTopTab('mdishes')">
+        <iconify-icon icon="ep:dish-dot"></iconify-icon>
+      </ion-tab-button>
+      <ion-tab-button tab="desserts" [routerLink]="['/tabs/desserts']" [ngClass]="{'custom-tab-active': activeTopTab === 'desserts'}" (click)="setActiveTopTab('desserts')">
+        <iconify-icon icon="streamline-plump:cake-slice" width="23" height="23"></iconify-icon>
+      </ion-tab-button>
+      <ion-tab-button tab="drinks" [routerLink]="['/tabs/drinks']" [ngClass]="{'custom-tab-active': activeTopTab === 'drinks'}" (click)="setActiveTopTab('drinks')">
+        <iconify-icon icon="pepicons-pencil:soft-drink"></iconify-icon>
+      </ion-tab-button>
+    </ion-tab-bar>
+</ion-header>
+
+<ion-tabs>
+  <ion-router-outlet></ion-router-outlet>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="account" [routerLink]="['/tabs/account']" [ngClass]="{'custom-tab-active': activeBottomTab === 'account'}" (click)="setActiveBottomTab('account')">
+      <iconify-icon icon="codicon:account" width="24" height="24"></iconify-icon>
+    </ion-tab-button>
+    <ion-tab-button tab="favs" [routerLink]="['/tabs/favs']" [ngClass]="{'custom-tab-active': activeBottomTab === 'favs'}" (click)="setActiveBottomTab('favs')">
+      <iconify-icon icon="clarity:heart-line"></iconify-icon>
+    </ion-tab-button>
+    <ion-tab-button tab="cart" [routerLink]="['/tabs/cart']" [ngClass]="{'custom-tab-active': activeBottomTab === 'cart'}" (click)="setActiveBottomTab('cart')">
+      <iconify-icon icon="streamline-ultimate:shopping-basket-1"></iconify-icon>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>

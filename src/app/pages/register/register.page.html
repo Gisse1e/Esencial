@@ -1,0 +1,83 @@
+<ion-content [fullscreen]="true">
+  <div class="register-container">
+    <app-decor-background [ovalOpacity]="0.3" [fadeOut]="true"></app-decor-background>
+    <div align-items="center" class="ion-padding logo-saludo-container">
+      <ion-col><img src="../../../assets/img/logoesencial.png" class="logo"></ion-col>
+      <ion-col class="saludo-text">
+        <h1>¡Bienvenido!</h1>
+        <h2>Crea tu cuenta para comenzar</h2>
+      </ion-col>
+    </div>
+    <form [formGroup]="registerForm" (ngSubmit)="registrar()" class="form-container">
+      <ion-input
+        label="Nombre Completo"
+        label-placement="floating"
+        fill="outline"
+        placeholder="Ingrese su nombre completo"
+        formControlName="nombre"
+        type="text"
+        autocomplete="name">
+      </ion-input>
+      <ion-note color="danger" *ngIf="registerForm.get('nombre')?.touched && registerForm.get('nombre')?.invalid">
+        Nombre y Apellido
+      </ion-note>
+
+      <ion-input
+        label="Correo Electrónico"
+        label-placement="floating"
+        fill="outline"
+        placeholder="Ingrese su email"
+        formControlName="email"
+        type="email"
+        autocomplete="email">
+      </ion-input>
+      <ion-note color="danger" *ngIf="registerForm.get('email')?.touched && registerForm.get('email')?.invalid">
+        Email válido requerido
+      </ion-note>
+
+      <ion-input
+        label="Número de Celular"
+        label-placement="floating"
+        fill="outline"
+        placeholder="+569xxxxxxxx"
+        formControlName="celular"
+        type="tel"
+        autocomplete="tel">
+      </ion-input>
+      <ion-note color="danger" *ngIf="registerForm.get('celular')?.touched && registerForm.get('celular')?.invalid">
+        El número debe tener el formato +569xxxxxxxx
+      </ion-note>
+
+      <ion-input
+        label="Contraseña"
+        label-placement="floating"
+        fill="outline"
+        placeholder="Cree una contraseña"
+        formControlName="password"
+        type="password"
+        autocomplete="new-password">
+      </ion-input>
+      <ion-note color="danger" *ngIf="registerForm.get('password')?.touched && registerForm.get('password')?.invalid">
+        La contraseña debe tener al menos 6 caracteres, una mayúscula y un número
+      </ion-note>
+
+      <ion-input
+        label="Confirmar Contraseña"
+        label-placement="floating"
+        fill="outline"
+        placeholder="Repita su contraseña"
+        formControlName="confirmPassword"
+        type="password"
+        autocomplete="new-password">
+      </ion-input>
+      <ion-note color="danger" *ngIf="registerForm.hasError('mismatch') && registerForm.get('confirmPassword')?.touched">
+        Las contraseñas no coinciden
+      </ion-note>
+
+      <ion-button expand="block" type="submit" class="btn-verde-oscuro">Registrarse</ion-button>
+    </form>
+    <div class="register-link">
+      <p>¿Ya tienes una cuenta? <a [routerLink]="['/login']">Inicia sesión</a></p>
+    </div>
+  </div>
+</ion-content>

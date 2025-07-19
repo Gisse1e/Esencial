@@ -1,0 +1,25 @@
+<div class="daily-detail-card">
+  <ion-button fill="clear" class="close-btn" (click)="cerrarModal()" slot="end">
+    <iconify-icon icon="mdi:close" width="24" height="24" style="color: #fff;"></iconify-icon>
+  </ion-button>
+  <div class="detail-row">
+    <iconify-icon icon="ep:dish-dot" width="24" height="24"></iconify-icon>
+    {{ menu.maindish }}
+  </div>
+  <div class="detail-row">
+    <iconify-icon icon="streamline-plump:cake-slice" width="23" height="23"></iconify-icon>
+    {{ menu.dessert }}
+  </div>
+  <div class="detail-row">
+    <iconify-icon icon="pepicons-pencil:soft-drink" width="26" height="26"></iconify-icon>
+    {{ menu.drink }}
+  </div>
+  <div class="detail-row" *ngIf="menu.gluten">
+    <iconify-icon icon="mdi:wheat" width="24" height="24"></iconify-icon>
+    {{ menu.gluten }}
+  </div>
+  <div class="detail-row" *ngIf="menu.vegan">
+    <iconify-icon icon="mdi:leaf" width="24" height="24"></iconify-icon>
+    {{ menu.vegan }}
+  </div>
+</div> 

@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-toolbar></ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <app-decor-background [ovalOpacity]="0.3"></app-decor-background>
+  <section class="daily-menu">
+    <h1 class="daily-title">Menú del Día</h1>
+    <div class="daily-img-block">
+      <img [src]="dailyMenu.image" [alt]="dailyMenu.maindish" class="daily-img" />
+    </div>
+    <div class="daily-price">${{ dailyMenu.price | number:'1.0-0':'es-CL' }}</div>
+    <ion-button class="daily-btn" (click)="abrirModal()">Ver más detalles</ion-button>
+  </section>
+</ion-content>

@@ -1,0 +1,31 @@
+@use 'src/theme/variables' as *;
+
+ion-tab-bar {
+  background: $color-fondo-tabs;
+  --background: $color-fondo-tabs;
+}
+
+ion-tab-button iconify-icon {
+  color: $color-verde-oscuro !important;
+  font-size: 26px;
+  transition: color 0.2s, transform 0.2s;
+}
+
+ion-tab-button[aria-selected="true"] iconify-icon {
+  color: #fff !important;
+  transform: scale(1.2) !important;
+}
+
+ion-tab-button.custom-tab-active iconify-icon {
+  color: #fff !important;
+  transform: scale(1.2) !important;
+}
+
+ion-tab-button {
+  --ripple-color: #fff;
+}
+
+ion-header {
+  background: #f7f7f7 !important;
+  --background: #f7f7f7 !important;
+}

@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar></ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true" class="ion-padding">
+  <app-decor-background [ovalOpacity]="0.6"></app-decor-background>
+  <div class="account-container">
+    <div class="avatar-block">
+      <img src="assets/img/user.jpg" alt="Avatar" class="avatar-img" />
+    </div>
+    <div class="account-info">
+      <div class="profile-label">Nombre</div>
+      <ion-item lines="none" class="profile-item" [disabled]="!editMode">
+        <ion-icon name="person-outline" slot="start"></ion-icon>
+        <ion-input [(ngModel)]="editUser.nombre" [disabled]="!editMode"></ion-input>
+      </ion-item>
+      <ion-text color="danger" *ngIf="editMode && validationErrors.nombre">
+        <small>{{ validationErrors.nombre }}</small>
+      </ion-text>
+      <div class="profile-label">Email</div>
+      <ion-item lines="none" class="profile-item" [disabled]="!editMode">
+        <ion-icon name="mail-outline" slot="start"></ion-icon>
+        <ion-input [(ngModel)]="editUser.email" [disabled]="!editMode"></ion-input>
+      </ion-item>
+      <ion-text color="danger" *ngIf="editMode && validationErrors.email">
+        <small>{{ validationErrors.email }}</small>
+      </ion-text>
+      <div class="profile-label">Celular</div>
+      <ion-item lines="none" class="profile-item" [disabled]="!editMode">
+        <ion-icon name="call-outline" slot="start"></ion-icon>
+        <ion-input [(ngModel)]="editUser.celular" [disabled]="!editMode"></ion-input>
+      </ion-item>
+      <ion-text color="danger" *ngIf="editMode && validationErrors.celular">
+        <small>{{ validationErrors.celular }}</small>
+      </ion-text>
+      <div class="profile-label">Dirección</div>
+      <ion-item lines="none" class="profile-item" [disabled]="!editMode">
+        <ion-icon name="location-outline" slot="start"></ion-icon>
+        <ion-input [(ngModel)]="editUser.direccion" [disabled]="!editMode"></ion-input>
+      </ion-item>
+      <ion-text color="danger" *ngIf="editMode && validationErrors.direccion">
+        <small>{{ validationErrors.direccion }}</small>
+      </ion-text>
+      <ion-button expand="block" class="btn-verde-claro" *ngIf="!editMode" (click)="editarPerfil()">
+        <ion-icon name="create-outline" slot="start"></ion-icon>
+        Editar mi perfil
+      </ion-button>
+      <div *ngIf="editMode" style="display: flex; flex-direction: column;">
+        <ion-button expand="block" class="btn-verde-oscuro" (click)="guardarPerfil()">Guardar</ion-button>
+        <ion-button expand="block" class="btn-verde-claro" (click)="cancelarEdicion()">Cancelar</ion-button>
+      </div>
+      <ion-button class="btn-verde-oscuro" expand="block" (click)="cerrarSesion()" *ngIf="!editMode">
+        <ion-icon name="log-out-outline" slot="start"></ion-icon>
+        Cerrar sesión
+      </ion-button>
+    </div>
+  </div>
+</ion-content>

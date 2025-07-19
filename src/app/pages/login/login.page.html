@@ -1,0 +1,46 @@
+<ion-content [fullscreen]="true">
+  <div class="login-container">
+    <app-decor-background [ovalOpacity]="0.3" [fadeOut]="true"></app-decor-background>
+    <div align-items="center" class="ion-padding logo-saludo-container">
+      <ion-col>
+        <img src="../../../assets/img/logoesencial.png" class="logo" />
+      </ion-col>
+      <ion-col class="saludo-text">
+        <h1>¡Bienvenido!</h1>
+        <h2>Inicia sesión para continuar</h2>
+      </ion-col>
+    </div>
+    <form [formGroup]="loginForm" (ngSubmit)="login()" class="form-container">
+      <ion-input
+        label="Correo Electrónico"
+        label-placement="floating"
+        fill="outline"
+        placeholder="Ingrese su email"
+        formControlName="email"
+        type="email"
+        autocomplete="email">
+      </ion-input>
+      <ion-note color="danger" *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.invalid">
+        Correo electrónico válido requerido
+      </ion-note>
+
+      <ion-input
+        label="Contraseña"
+        label-placement="floating"
+        fill="outline"
+        placeholder="Ingrese su contraseña"
+        formControlName="password"
+        type="password"
+        autocomplete="current-password">
+      </ion-input>
+      <ion-note color="danger" *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.invalid">
+        Contraseña requerida
+      </ion-note>
+
+      <ion-button expand="block" type="submit" class="btn-verde-oscuro">Ingresar</ion-button>
+    </form>
+    <div class="register-link">
+      <p>¿No tienes cuenta? <a [routerLink]="['/register']">Regístrate</a></p>
+    </div>
+  </div>
+</ion-content>

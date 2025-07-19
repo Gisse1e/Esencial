@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Manrope:wght@200..800&display=swap');
+
+:host, form, ion-input, ion-button, .register-link {
+  font-family: 'Manrope', sans-serif;
+}
+
+body, ion-app {
+  height: 100vh;
+  min-height: 100vh;
+}
+
+ion-app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  box-shadow: none;
+  padding: 0;
+}
+
+ion-content {
+  --overflow: hidden;
+  overflow: hidden !important;
+  touch-action: none;
+  padding: 0 !important;
+}
+
+.logo-saludo-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 60px;
+  margin-bottom: 30px;
+  width: 100%;
+  align-self: flex-start;
+}
+
+.logo {
+  width: 28vw;
+  max-width: 180px;
+  min-width: 60px;
+  height: auto;
+  aspect-ratio: 1/1;
+  object-fit: contain;
+  border-radius: 18px;
+  background: transparent;
+  margin-right: 8px;
+  margin-bottom: 0;
+  align-self: flex-start;
+}
+
+.saludo-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: auto;
+}
+
+h1 {
+  font-family: 'Amatic SC', cursive;
+  font-size: 3.8rem;
+  font-weight: 700;
+  color: #62cd14;
+  line-height: 1.1;
+  text-align: left;
+  margin-bottom: 0;
+}
+
+h2 {
+  font-family: 'Lexend', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #37750c;
+  margin-top: 2px;
+  line-height: 1.2;
+  text-align: center;
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+form {
+  width: 90vw;
+  max-width: 350px;
+  min-width: 220px;
+  background: transparent;
+  padding: 0 2vw 1.5rem 2vw;
+  border-radius: 18px;
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+  margin: 0 auto;
+}
+
+ion-input {
+  font-size: 1rem;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 500;
+  color: #37750c;
+  background: transparent;
+  width: 100%;
+  --padding-start: 12px;
+  --padding-end: 12px;
+  --highlight-background: rgba(126, 217, 87, 0.5);
+  --background: rgba(126, 217, 87, 0.1);
+  --border-radius: 12px;
+  margin-bottom: 6px;
+  box-sizing: border-box;
+  --highlight-color-focused: #37750c;
+  --border-color: #37750c;
+  --color: #37750c;
+}
+
+ion-input:focus-within, ion-input:focus, ion-input:active {
+  --highlight-color-focused: #37750c;
+  --border-color: #37750c;
+  --color: #37750c;
+}
+
+ion-input::placeholder {
+  color: #37750c;
+  opacity: 1;
+  font-weight: 500;
+}
+
+ion-note[color="danger"] {
+  color: #e74c3c !important;
+  font-size: 0.95rem;
+  margin-bottom: 2px;
+  margin-left: 4px;
+  align-self: flex-start;
+}
+
+ion-button[type="submit"] {
+  width: 100%;
+  font-size: 1.1rem;
+  min-height: 2.8rem;
+  margin-top: 1.2rem;
+  --background: #65DE55 !important;
+  --background-hover: #65DE55 !important;
+  --background-activated: #65DE55 !important;
+  --border-radius: 12px;
+  border-radius: 12px !important;
+  font-family: 'Lexend', sans-serif !important;
+  font-weight: bold;
+  color: #fff;
+  box-shadow: none !important;
+  filter: none !important;
+  background: #65DE55 !important;
+  opacity: 0.9 !important;
+  text-transform: none !important;
+}
+
+ion-button[type="submit"]::part(native) {
+  background: #65DE55 !important;
+  color: #fff !important;
+  box-shadow: none !important;
+  filter: none !important;
+  border-radius: 12px !important;
+  font-family: 'Lexend', sans-serif !important;
+  opacity: 0.9 !important;
+  text-transform: none !important;
+}
+
+ion-button[disabled][type="submit"],
+ion-button[disabled][type="submit"]::part(native) {
+  opacity: 0.9 !important;
+  filter: none !important;
+  background: #65DE55 !important;
+  color: #fff !important;
+  --background: #65DE55 !important;
+  border-radius: 12px !important;
+  font-family: 'Lexend', sans-serif !important;
+  text-transform: none !important;
+}
+
+.register-link {
+  margin-top: 0.8rem;
+  text-align: center;
+  font-size: 1rem;
+  color: #37750c;
+  width: 100%;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.register-link a {
+  color: #62cd14 !important;
+  font-weight: 800;
+  text-decoration: underline;
+}
